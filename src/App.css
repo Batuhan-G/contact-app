@@ -47,6 +47,7 @@
      width: 60px;
  }
  .deleteBtn{
+    padding: 5px;
      width: 18px;
      height: 22px;
      background-color: red;
@@ -63,4 +64,10 @@
  }
  .deleteAllBtn:hover{
      text-decoration: underline;
+ }
+
+ .edit span {
+    margin-left: 10px;
+    font-size: 12px;
+    cursor: pointer;
  }
