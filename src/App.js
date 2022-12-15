@@ -8,12 +8,14 @@ import {
 } from "react-router-dom";
 import Edit from './components/Contacts/Edit';
 import RootLayout from './layouts/RootLayout';
+import Error from './components/Contacts/Error';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout />}>
       <Route index element={<Contacts />} />
       <Route path='/edit/:id' element={<Edit />} />
+      <Route path='*' element={<Error />} />
     </Route>
   )
 )

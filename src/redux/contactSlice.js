@@ -2,7 +2,8 @@ import { createSlice, createEntityAdapter } from "@reduxjs/toolkit";
 
 
 export const contactAdaptor = createEntityAdapter();
-const initialState = contactAdaptor.getInitialState();
+/* const localContacts = JSON.parse(localStorage.getItem("storageContacts")) */
+const initialState = contactAdaptor.getInitialState()
 
 export const contactSelectors = contactAdaptor
     .getSelectors(state => state.contacts)
@@ -14,8 +15,9 @@ const contactSlice = createSlice({
         addContact: contactAdaptor.addOne,
         deleteContact: contactAdaptor.removeOne,
         removeAllContact: contactAdaptor.removeAll,
+        updateContact: contactAdaptor.updateOne,
     },
 });
 
-export const { addContact, deleteContact, removeAllContact } = contactSlice.actions;
+export const { addContact, deleteContact, removeAllContact, updateContact } = contactSlice.actions;
 export default contactSlice.reducer;
